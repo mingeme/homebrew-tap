@@ -1,8 +1,8 @@
 class Aicommit < Formula
   desc "AI-powered git commit message generator"
   homepage "https://github.com/mingeme/aicommit"
-  url "https://github.com/mingeme/aicommit/releases/download/v0.1.4/aicommit-0.1.4.tar.gz"
-  sha256 "bc411f150fccb9feefe3c802ecf89df5b4e5245a29cd40bc3ea3c82430e309e4" # Replace with actual SHA256 after release
+  url "https://github.com/mingeme/aicommit/releases/download/v0.1.5/aicommit-0.1.5.tar.gz"
+  sha256 "cdef645fb7c7c0dc4d200af580879c4d9ef19956ee4b20bc9736fdb6f8f0db65" # Replace with actual SHA256 after release
   license "MIT"
 
   depends_on "node"
