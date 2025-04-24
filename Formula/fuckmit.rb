@@ -1,22 +1,24 @@
 class Fuckmit < Formula
   desc "AI-powered git commit message generator"
   homepage "https://github.com/mingeme/fuckmit"
-  version "0.1.1"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mingeme/fuckmit/releases/download/v#{version}/fuckmit-macos-arm64-#{version}"
-      sha256 "1ebaf4a51d9435394d354983f82bd907cc284a40b501d4e32e69a05d6380041e"
+      url "https://github.com/mingeme/fuckmit/releases/download/v#{version}/fuckmit-darwin-aarch64-#{version}.tar.gz"
+      sha256 "869a8be185d5e30c19afc535f8b99a34f73e173c520531dbed8dc6f587d16f2a"
     elsif Hardware::CPU.intel?
-      url "https://github.com/mingeme/fuckmit/releases/download/v#{version}/fuckmit-macos-amd64-#{version}"
-      sha256 "dc3d1c8bee985a7992bc8271b5800e730a2d724ac901f86cebe3e94015d1d6d4"
+      url "https://github.com/mingeme/fuckmit/releases/download/v#{version}/fuckmit-darwin-x86_64-#{version}.tar.gz"
+      sha256 "8105f2753ab0261c15e46fa578220d1ac676906fc3eec9e6f5d347e33ec5f899"
     end
   end
 
   def install
-    bin.install "fuckmit-macos-arm64-#{version}" => "fuckmit" if Hardware::CPU.arm?
-    bin.install "fuckmit-macos-amd64-#{version}" => "fuckmit" if Hardware::CPU.intel?
+    tar = "fuckmit-darwin-aarch64-#{version}.tar.gz" if Hardware::CPU.arm?
+    tar = "fuckmit-darwin-x86_64-#{version}.tar.gz" if Hardware::CPU.intel?
+    system "tar", "-xvf", tar
+    bin.install "fuckmit" => "fuckmit"
     chmod 0755, bin/"fuckmit"
   end
 
