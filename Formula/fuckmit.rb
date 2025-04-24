@@ -15,9 +15,6 @@ class Fuckmit < Formula
   end
 
   def install
-    tar = "fuckmit-darwin-aarch64-#{version}.tar.gz" if Hardware::CPU.arm?
-    tar = "fuckmit-darwin-x86_64-#{version}.tar.gz" if Hardware::CPU.intel?
-    system "tar", "-xvf", tar
     bin.install "fuckmit" => "fuckmit"
     chmod 0755, bin/"fuckmit"
   end
