@@ -1,16 +1,16 @@
 class Fuckmit < Formula
   desc "AI-powered git commit message generator"
   homepage "https://github.com/mingeme/fuckmit"
-  version "0.3.0-alpha.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/mingeme/fuckmit/releases/download/v#{version}/fuckmit-darwin-aarch64-#{version}.tar.gz"
-      sha256 "dcd1bf3423a5252dee14fbaadedf7c7141b01b6f55842580a5d07431edc451ef"
+      sha256 "8e616b43ade76e24dd7142a31c311edfa5d39e8c1ba33547cc202c30b70938f8"
     elsif Hardware::CPU.intel?
       url "https://github.com/mingeme/fuckmit/releases/download/v#{version}/fuckmit-darwin-x86_64-#{version}.tar.gz"
-      sha256 "2e93078aac4af4e1e3547e5cb54e091d25af870ce74530fab6cc4333a57826cd"
+      sha256 "63cb760f19385d6be9f34c9f0351b49e95eaef46a2feb547122e7dd1da8fa7a5"
     end
   end
 
